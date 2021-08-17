@@ -154,7 +154,7 @@ function vocab() {
 
 var chineseToken = "TOKEN4";
 var telegramUrl = "https://api.telegram.org/bot" + token;
-var webAppUrl = "https://script.google.com/macros/s/AKfycbwAVzO1zXT6KzH_AxHC8XMezcT3X12JvqQ-Sp7pNYAtdu-VcLP4B7EHBp218GFw2zPk/exec";
+var webAppUrl = "WEBAPPURL";
 
 function getMe() {
   var url = telegramUrl + "/getMe";

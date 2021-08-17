@@ -2,7 +2,7 @@ var token = "TOKEN1";
 var telegramUrl = "https://api.telegram.org/bot" + token;
 
 var ssId = "TOKEN2";
-var webAppUrl= "https://script.google.com/macros/s/AKfycbwufUePH_GXDfGRY7opbqV4FCP_hapty8DBzpkBqrS_kqgw_9IHClpXAuIIjNwZPC8O/exec"
+var webAppUrl= "WEBAPPURL"
 
 function sendText(id, text) {
   var response = UrlFetchApp.fetch(telegramUrl + "/sendMessage?chat_id=" + id + "&text=" + text);

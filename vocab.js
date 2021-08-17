@@ -1,10 +1,10 @@
-var token2 = "1278093075:AAFleWJaZtxylodTaXpDI5v5juL5jYpfXKY";
-var token = "1780116415:AAGYOo142ppvq8PDpa2v-YEnGVytNzY-jZk";
-var confucius = "1680497917:AAFR4YjRek_s5cHJou8ZvZeL1A-SV2YxwPE";
+var token2 = "TOKEN1";
+var token = "TOKEN2";
+var confucius = "TOKEN3";
 var url = "https://api.telegram.org/bot" + token;
 
-var chatId = 242141394;
-var ssId = "1m9J0FYZtODqZkeSm_5zAvVQC3Lgj3s5FaFN_AzU8hFA";
+var chatId = CHATID;
+var ssId = "SpreadsheetID";
 var chinese = SpreadsheetApp.openById(ssId).getSheetByName('Chinese');
 var hsk = SpreadsheetApp.openById(ssId).getSheetByName('HSK');
 var idioms = SpreadsheetApp.openById(ssId).getSheetByName('Idioms');
@@ -43,7 +43,7 @@ function sendMessage(text,keyBoard) {
     method: "post",
     payload: {
       method: "sendMessage",
-      chat_id: "242141394",
+      chat_id: "CHATID",
       text: text,
       parse_mode: "HTML",
       reply_markup: JSON.stringify(keyBoard)
@@ -54,14 +54,6 @@ function sendMessage(text,keyBoard) {
 
 function sendStuff() {
   return sendMessage("Like that", keyBoard);
-}
-
-function weihaoText(text) {
-  var response = UrlFetchApp.fetch(url + "/sendMessage?chat_id=199555163&text=" + text);
-}
-
-function zitongText(text) {
-  var response = UrlFetchApp.fetch(url + "/sendMessage?chat_id=1258724328&text=" + text);
 }
 
 function datetime() {
@@ -158,53 +150,9 @@ function vocab() {
   
 }
 
-function weihaoVocab() {
-  randomiserRange = randomiserSheet.getRange(2, 2, japanese.getMaxRows() - 1, 1).randomize();
-  randomNumber = randomiserRange.getValues()[0][0];
-  word = japanese.getRange(2 + randomNumber, 1, 1, 10).getValues()[0];
-  mainWord = word[0];
-  try{romaji = ' ' + word[1];} catch(e) {romaji = '';}
-  try{purpose = '%0AP: ' + word[3];} catch(e) {purpose = '';}
-  try{usage = '%0AM: ' + word[4];} catch(e) {usage = '';}
-  try{example = '%0AS: ' + word[5];} catch(e) {example = '';}
-  try{exampleRomaji = '%0AR: ' + word[6];} catch(e) {exampleRomaji = '';}
-  try{translation = '%0AT: ' + word[7];} catch(e) {translation = '';}
-  try{link = '%0AL: ' + word[9];} catch(e) {link = '';}
-  Logger.log(word);
-  timeNow = new Date;
-  var hourNow = parseInt(timeNow.toString()[16] + timeNow.toString()[17])
-  Logger.log(timeNow.toString());
-  Logger.log(hourNow);
-  if ((hourNow < 18) & (hourNow > 7)) {
-    text = mainWord + romaji + purpose + usage + example + exampleRomaji + translation + link;
-    weihaoText(text);
-  }
-}
 
-function zitongVocab() {
-  randomiserRange = randomiserSheet.getRange(2, 2, japanese.getMaxRows() - 1, 1).randomize();
-  randomNumber = randomiserRange.getValues()[0][0];
-  word = japanese.getRange(2 + randomNumber, 1, 1, 10).getValues()[0];
-  mainWord = word[0];
-  try{romaji = ' ' + word[1];} catch(e) {romaji = '';}
-  try{purpose = '%0AP: ' + word[3];} catch(e) {purpose = '';}
-  try{usage = '%0AM: ' + word[4];} catch(e) {usage = '';}
-  try{example = '%0AS: ' + word[5];} catch(e) {example = '';}
-  try{exampleRomaji = '%0AR: ' + word[6];} catch(e) {exampleRomaji = '';}
-  try{translation = '%0AT: ' + word[7];} catch(e) {translation = '';}
-  try{link = '%0AL: ' + word[9];} catch(e) {link = '';}
-  Logger.log(word);
-  timeNow = new Date;
-  var hourNow = parseInt(timeNow.toString()[16] + timeNow.toString()[17])
-  Logger.log(timeNow.toString());
-  Logger.log(hourNow);
-  if ((hourNow < 18) & (hourNow > 7)) {
-    text = mainWord + romaji + purpose + usage + example + exampleRomaji + translation + link;
-    zitongText(text);
-  }
-}
 
-var chineseToken = "1391962524:AAHH_lOUK8UCXFlUf4HE7LGop1MxjO9-NEw";
+var chineseToken = "TOKEN4";
 var telegramUrl = "https://api.telegram.org/bot" + token;
 var webAppUrl = "https://script.google.com/macros/s/AKfycbwAVzO1zXT6KzH_AxHC8XMezcT3X12JvqQ-Sp7pNYAtdu-VcLP4B7EHBp218GFw2zPk/exec";
 

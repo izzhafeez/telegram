@@ -1,7 +1,7 @@
-var token = "1656432287:AAEDIkOFLYAnJWp43FvD_LcU5-hRUJfHUjM";
+var token = "TOKEN1";
 var telegramUrl = "https://api.telegram.org/bot" + token;
 
-var ssId = "1M9Ujc54yZZPlxOX3yxWuqcuJOxzIrDYz4TAFx8ifB8c";
+var ssId = "TOKEN2";
 var webAppUrl= "https://script.google.com/macros/s/AKfycbwufUePH_GXDfGRY7opbqV4FCP_hapty8DBzpkBqrS_kqgw_9IHClpXAuIIjNwZPC8O/exec"
 
 function sendText(id, text) {
